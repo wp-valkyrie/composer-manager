@@ -1,0 +1,34 @@
+{
+    "name": "valkyrie/composer-manager",
+    "description": "Composer management handler for the wp valkyrie system",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Jannik Schäfer",
+            "email": "me@jschaefer.io"
+        }
+    ],
+    "require": {
+        "wikimedia/composer-merge-plugin": "^1.4"
+    },
+    "extra": {
+        "merge-plugin": {
+            "include": [
+                "../valkyrie-*/composer.json",
+                "../core-*/composer.json",
+                "../*/valkyrie.composer.json",
+                "../*/wp-core.composer.json",
+                "../../themes/*/modules/*/composer.json",
+                "../../themes/*/valkyrie/*/composer.json",
+                "../../themes/*/wp-core/*/composer.json"
+            ],
+            "recurse": true,
+            "replace": false,
+            "ignore-duplicates": false,
+            "merge-dev": true,
+            "merge-extra": false,
+            "merge-extra-deep": false,
+            "merge-scripts": false
+        }
+    }
+}
